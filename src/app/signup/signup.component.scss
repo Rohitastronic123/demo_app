@@ -1,0 +1,113 @@
+/* General Styles */
+.full-width {
+  width: 100%;
+}
+::ng-deep .mat-dialog-container {
+  
+  background: #5795ec; 
+  color: #000000; 
+  
+}
+.mat-form-field {
+  margin-bottom: 20px; // Space between form fields
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .mat-form-field {
+    margin-bottom: 15px; // Reduced spacing for smaller screens
+  }
+}
+
+/* Dialog Header */
+h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #000000; // Header text color
+}
+
+/* Form Field Styles */
+.form-field {
+  display: flex;
+  flex-direction: column; // Stack labels and inputs vertically
+}
+
+/* Error Messages */
+.mat-error {
+  font-size: 0.875rem; // Slightly smaller font for error messages
+  color: #d50000; // Error color
+}
+
+/* Buttons */
+mat-dialog-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px; // Space above buttons
+
+  button {
+    flex: 1;
+    margin: 0 10px; // Space between buttons
+    min-width: 120px; // Minimum button width
+    color: #000000; // Button text color
+
+    &:hover {
+      background-color: #007bff; // Button background on hover
+      color: white; // Button text color on hover
+      transition: background-color 0.2s ease-in-out; // Smooth transition
+    }
+  }
+}
+
+/* Animations for Form Fields */
+.mat-form-field {
+  transition: all 0.2s ease-in-out;
+
+  &:focus-within {
+    border-color: #0077c8; // Change border color on focus
+  }
+
+  .mat-input-element {
+    color: #000000; // Input text color
+  }
+
+  .mat-form-field-label {
+    color: rgba(0, 0, 0, 0.6); // Label color
+  }
+}
+
+/* Scrollbar Styles */
+mat-dialog-content {
+  max-height: 400px; // Adjust for content height as needed
+  overflow-y: auto;
+  background: #5795ec; // Dialog background color
+  color: #000000; // Dialog text color
+  padding: 16px; // Padding for dialog content
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px; // Width of scrollbar
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #f1f1f1; // Track color
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #0077c8; // Thumb color
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #005ea1; // Hover color for thumb
+  }
+
+  /* Firefox scrollbar styling */
+  scrollbar-color: #0077c8 #f1f1f1;
+  scrollbar-width: thin;
+  border-radius: 10px;
+}
+mat-label{
+  color: black;
+}

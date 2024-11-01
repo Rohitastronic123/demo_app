@@ -1,0 +1,53 @@
+.resume-builder {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #5795ec;
+  color: white;
+  mat-form-field {
+    width: 100%;
+    margin: 8px 0;
+  }
+
+  .mat-checkbox {
+    margin-right: 10px;
+  }
+
+  mat-slider {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  button {
+    margin-top: 20px;
+  }
+}
+mat-label{
+  color: white;
+}
+.resume-preview {
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.resume-preview h2 {
+  font-size: 24px;
+  color: #333;
+}
+
+.resume-preview p {
+  font-size: 14px;
+  color: #555;
+}
+
+.resume-preview h3 {
+  font-size: 18px;
+  color: #333;
+  margin-top: 20px;
+}

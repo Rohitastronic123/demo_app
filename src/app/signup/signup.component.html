@@ -1,0 +1,52 @@
+
+
+<h2 mat-dialog-title>Signup</h2>
+<mat-dialog-content>
+  <form [formGroup]="signupForm" (ngSubmit)="submitForm()">
+    <div class="form-field">
+      <mat-form-field class="full-width">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" required>
+        <mat-error *ngIf="signupForm.get('name')?.hasError('required')">Name is required.</mat-error>
+      </mat-form-field>
+    </div>
+
+    <mat-form-field class="full-width" >
+      <mat-label >State</mat-label>
+      <mat-select formControlName="state" (selectionChange)="onStateChange($event.value)">
+        <mat-option *ngFor="let state of states" [value]="state.state">{{ state.state }}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="signupForm.get('state')?.hasError('required')">State is required.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>City</mat-label>
+      <mat-select formControlName="city" required>
+        <mat-option *ngFor="let city of cities" [value]="city">{{ city }}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="signupForm.get('city')?.hasError('required')">City is required.</mat-error>
+    </mat-form-field>
+
+    <div class="form-field">
+      <mat-form-field class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" type="email" required>
+        <mat-error *ngIf="signupForm.get('email')?.hasError('required')">Email is required.</mat-error>
+        <mat-error *ngIf="signupForm.get('email')?.hasError('email')">Please enter a valid email.</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-field">
+      <mat-form-field class="full-width" >
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" type="password" required>
+        <mat-error *ngIf="signupForm.get('password')?.hasError('required')">Password is required.</mat-error>
+      </mat-form-field>
+    </div>
+
+    <mat-dialog-actions>
+      <button mat-button mat-dialog-close>Cancel</button>
+      <button mat-button type="submit" [disabled]="!signupForm.valid">Signup</button>
+    </mat-dialog-actions>
+  </form>
+</mat-dialog-content>

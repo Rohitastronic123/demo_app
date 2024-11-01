@@ -1,0 +1,20 @@
+<h2 mat-dialog-title>Login</h2>
+<mat-dialog-content>
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput type="email" formControlName="email">
+      <mat-error *ngIf="loginForm.get('email')?.hasError('required')">Email is required.</mat-error>
+      <mat-error *ngIf="loginForm.get('email')?.hasError('email')">Please enter a valid email.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput type="password" formControlName="password">
+      <mat-error *ngIf="loginForm.get('password')?.hasError('required')">Password is required.</mat-error>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button type="submit" (click)="onLogin()" [disabled]="loginForm.invalid">Login</button>
+</mat-dialog-actions>

@@ -1,0 +1,46 @@
+.custom-toolbar {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+
+  .logo {
+    img {
+      
+     height: 60px;
+     width: 80px;
+     border-radius: 5px;
+    }
+  }
+
+  .spacer {
+    flex: 1 1 auto; // Take up remaining space
+  }
+
+  .menu-button {
+    display: none; // Hide on larger screens
+  }
+
+  .desktop-nav {
+    display: flex; // Show navigation items
+    justify-content: flex-end; // Align buttons to the right
+    gap: 16px; // Optional: Add space between buttons
+
+    // Center the router links
+    & > .nav-button {
+      margin: 0 auto; // Center the buttons in the space they occupy
+    }
+  }
+
+  @media (max-width: 768px) {
+    .desktop-nav {
+      display: none; // Hide navigation items on mobile
+    }
+
+    .menu-button {
+      display: block; // Show menu button on mobile
+    }
+  }
+}
+::ng-deep .mat-toolbar.mat-primary{
+background-color: #0047AB;
+}

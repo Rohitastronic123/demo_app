@@ -1,0 +1,62 @@
+// login-dialog.component.scss
+::ng-deep .mat-dialog-container {
+  
+  background: #5795ec; 
+  color: #000000; 
+  
+}
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    mat-dialog-content {
+      width: 100%; // Full width for responsiveness
+      padding: 16px;
+      animation: fadeIn 0.3s ease-in-out; // Animation effect on open
+  
+      form {
+        display: flex;
+        flex-direction: column;
+  
+        mat-form-field {
+          margin-bottom: 16px; // Spacing between fields
+          width: 100%; // Full width for fields
+  
+          mat-label {
+            font-weight: bold; // Emphasize label
+          }
+        }
+      }
+    }
+  
+    mat-dialog-actions {
+      display: flex;
+      justify-content: space-between;
+      width: 100%; // Full width for buttons
+  
+      button {
+        flex: 1; // Equal width for buttons
+        margin: 0 8px; // Margin between buttons
+  
+        &:hover {
+          background-color: #007bff; // Light hover effect
+          transition: background-color 0.3s ease; // Smooth transition
+        }
+      }
+    }
+  }
+  
+  // Animation keyframes
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

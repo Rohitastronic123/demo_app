@@ -1,0 +1,30 @@
+.carousel-inner img {
+    width: 100%;
+    height: auto; /* Adjust height as needed */
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: black; /* Optional: customize control colors */
+  }
+  .carousel-image {
+    width: 100%;
+    aspect-ratio: 16 / 9; // This sets a 16:9 aspect ratio for the images
+  
+    @media (max-width: 992px) { // Tablet screens
+      aspect-ratio: 4 / 3; // Change aspect ratio for tablets
+    }
+  
+    @media (max-width: 576px) { // Mobile screens
+      aspect-ratio: 1 / 1; // Change aspect ratio to square for mobile screens
+    }
+  }
+  
+  /* Optional: Adjust carousel controls for better mobile view */
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 5%;
+  }
+  #carouselExample{
+    margin-top: 1px;
+  }

@@ -1,0 +1,66 @@
+<div class="resume-builder" [formGroup]="resumeForm">
+  <h2>Resume Builder</h2>
+
+  <!-- Basic Information Form -->
+  <div class="form-section">
+    <mat-form-field appearance="outline">
+      <mat-label>Full Name</mat-label>
+      <input matInput formControlName="name" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Phone Number</mat-label>
+      <input matInput formControlName="phone" />
+    </mat-form-field>
+      <mat-form-field appearance="outline">
+      <mat-label>Address </mat-label>
+      <input matInput formControlName="address" />
+    </mat-form-field>
+  </div>
+
+  <hr />
+
+  <!-- Section Selection with Checkboxes -->
+  <div>
+    <h3>Select Sections to Include</h3>
+    <mat-checkbox *ngFor="let section of sections" (change)="onSectionToggle(section)">
+      {{ section }}
+    </mat-checkbox>
+  </div>
+
+  <!-- Form Fields for Selected Sections -->
+  <div *ngFor="let section of sections">
+    <div *ngIf="selectedSections[section]">
+      <mat-form-field appearance="outline">
+        <mat-label>{{ section }}</mat-label>
+        <textarea matInput [formControlName]="section"></textarea>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <!-- Actions -->
+  <button mat-raised-button color="primary" (click)="togglePreview()">Preview Resume</button>
+  <button mat-raised-button color="accent" (click)="downloadPDF()">Download as PDF</button>
+
+  <!-- Resume Preview Section -->
+  <div class="resume-preview" id="resumePreview" *ngIf="showPreview">
+    <h2>{{ resumeForm.get('name')?.value }}</h2>
+    <p>{{ resumeForm.get('email')?.value }}</p>
+    <p>{{ resumeForm.get('phone')?.value }}</p>
+    <p>{{ resumeForm.get('address')?.value }}</p>
+
+    <hr />
+
+    <div *ngFor="let section of sections">
+      <div *ngIf="selectedSections[section]">
+        <h3>{{ section }}</h3>
+        <p>{{ resumeForm.get(section)?.value }}</p>
+      </div>
+    </div>
+  </div>
+</div>

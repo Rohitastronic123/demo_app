@@ -1,0 +1,31 @@
+<mat-toolbar color="primary" class="custom-toolbar">
+  <span class="logo">
+    <img src="../../assets/images/logo.gif" alt="" />
+  </span>
+
+  <span class="spacer"></span>
+
+  <!-- For larger screens, display buttons directly -->
+  <div class="desktop-nav">
+    <button mat-button class="nav-button" routerLink="/about">About</button>
+    <button mat-button class="nav-button" routerLink="/contact">Contact</button>
+    <button mat-button class="nav-button" (click)="openLoginDialog()">Login</button>
+    <button mat-button class="nav-button" (click)="openSignupDialog()">Signup</button>
+  </div>
+
+  <!-- Menu button for mobile -->
+  <span mat-button [matMenuTriggerFor]="menu" class="menu-button" (click)="toggleMenu()">
+    <img [src]="isMenuOpen ? '../../assets/images/cross.png' : '../../assets/images/menu.png'" 
+         style="width: 30px; height: 30px;" 
+         [@fadeInOut]>
+  </span>
+  
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/about">About</button>
+    <button mat-menu-item routerLink="/contact">Contact</button>
+    <button mat-menu-item (click)="openLoginDialog()">Login</button>
+    <button mat-menu-item (click)="openSignupDialog()">Signup</button>
+  </mat-menu>
+</mat-toolbar>
+<app-carousel></app-carousel>
+<app-jbcard></app-jbcard>
